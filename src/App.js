@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Profile from './components/profile/profile'
+import user from './user.json';
+
+const { avatar, name, tag, location } = user;
+const { followers, views, likes } = user.stats;
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Profile
+      avatar={avatar}
+      name={name}
+      tag={tag}
+      location={location}
+      followers={followers}
+      views={views}
+      likes={likes}
+    />
+
   );
 }
 
