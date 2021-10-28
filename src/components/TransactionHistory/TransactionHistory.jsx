@@ -16,7 +16,7 @@ function TransactionHistory({ items }) {
                 {items.map((item) => {
                     const { id, type, amount, currency } = item;
                     return (
-                        <tr id={id}>
+                        <tr key={id}>
                             <td>{type}</td>
                             <td>{amount}</td>
                             <td>{currency}</td>
@@ -29,10 +29,10 @@ function TransactionHistory({ items }) {
 };
 
 TransactionHistory.propTypes = {
-    id: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    amount: PropTypes.string.isRequired,
-    currency: PropTypes.string.isRequired,
+    id: PropTypes.string,
+    type: PropTypes.string,
+    amount: PropTypes.string,
+    currency: PropTypes.string,
 };
 
 

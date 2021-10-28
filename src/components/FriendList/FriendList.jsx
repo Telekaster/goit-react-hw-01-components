@@ -6,10 +6,9 @@ function FriendList({friends}) {
         <ul className={styles.friend_list}>
             {friends.map((prop) => {
                 const { id, avatar, name, isOnline } = prop;
-                console.log(isOnline);
                 return (
                 
-                    <li className={styles.item} id={id}>
+                    <li className={styles.item} key={id}>
                         <span className = {isOnline ? (styles.online) : (styles.offline)}></span>
                         <img className={styles.avatar} src={avatar} alt={name} width="48" />
                         <p className={styles.name}>{name}</p>
@@ -21,10 +20,10 @@ function FriendList({friends}) {
 }
 
 FriendList.propTypes = {
-    id: PropTypes.number.isRequired,
+    id: PropTypes.number,
     avatar: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    isOnline: PropTypes.bool.isRequired,
+    name: PropTypes.string,
+    isOnline: PropTypes.bool,
 };
 
 

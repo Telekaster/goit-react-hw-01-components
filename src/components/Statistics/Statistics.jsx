@@ -12,7 +12,7 @@ function Statistics({ title, stats }) {
         <ul className={styles.stat_list}>
 
           {stats.map((stat) => (
-            <li className={styles.item}>
+            <li className={styles.item} key={stat.id}>
             <p className={styles.label}>{stat.label}</p>
             <p className="percentage">{stat.percentage}</p>
             </li>
@@ -26,8 +26,9 @@ function Statistics({ title, stats }) {
 
 
 Statistics.propTypes = {
+  id: PropTypes.string,
   title: PropTypes.string,
-  stats: PropTypes.array.isRequired,
+  stats: PropTypes.array,
 };
 
 export default Statistics;
