@@ -4,7 +4,7 @@ function Statistics({ title, stats }) {
     return (
       <section className="statistics">
 
-        {title !== null &&
+        {title &&
         <h2 className="title">{title}</h2>
         }
 
